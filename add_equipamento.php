@@ -1,3 +1,4 @@
+
 <?php
 require_once('includes/load.php');
 
@@ -7,6 +8,7 @@ page_require_level(2);
 $all_types_equip = find_all('types_equips');
 $all_manufacturer = find_all('manufacturers');
 $all_situation = find_all('situations');
+$all_tombo = find_all('tombo_aluno');
 ?>
 <?php
 if(isset($_POST['add_equipment'])){
@@ -65,7 +67,7 @@ if(isset($_POST['add_equipment'])){
 			<div class="panel-heading clearfix">
 				<strong>
 					<span class="glyphicon glyphicon-th"></span>
-					<span>Adicionar Novo Equipamento</span>
+					<span>Cadastrar Novo Equipamento</span>
 				</strong>
 				<div class="pull-right">
 		        	<a href="equipamentos.php" class="btn btn-danger">Listar equipamentos</a>
@@ -81,7 +83,7 @@ if(isset($_POST['add_equipment'])){
 										<span class="input-group-addon">
 											<i class="glyphicon glyphicon-th-large"></i>
 										</span>
-										<input type="number" class="form-control" name="equipment-tombo" placeholder="Número Tombo" required autocomplete="off">
+										<!-- <input type="number" class="form-control" name="equipment-tombo" placeholder="Número Tombo" required autocomplete="off"> -->
 									</div>
 								</div>
 								<div class="col-md-9">
@@ -116,6 +118,15 @@ if(isset($_POST['add_equipment'])){
 
 						<div class="form-group">
 							<div class="row">
+                            <div class="col-md-4">
+									<select class="form-control" name="equipment-type_equip" required>
+										<option value="">Selecione o Tombo</option>
+										<?php  foreach ($all_tombo as $t_equip): ?>
+										<option value="<?= (int)$t_equip['id'] ?>">
+										<?= $t_equip['name'] ?></option>
+										<?php endforeach; ?>
+									</select>
+								</div>
 								<div class="col-md-4">
 									<select class="form-control" name="equipment-type_equip" required>
 										<option value="">Selecione o Tipo de Equipamento</option>

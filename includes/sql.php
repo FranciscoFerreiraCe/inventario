@@ -188,7 +188,7 @@ function page_require_level($require_level){
 /*--------------------------------------------------------------*/
 function find_all_equipment(){
   global $db;
-  $sql  =" SELECT e.id, e.tombo, e.specifications, e.obs, e.warranty, t_e.name AS type_equip,";
+  $sql  =" SELECT e.id, e.tombo, e.imei_number, e.specifications, e.obs, e.warranty, t_e.name AS type_equip,";
   $sql  .=" m.name AS manufacturer, sit.name AS situation,";
   $sql  .=" e.created_at, u_c.name AS created_user, u_u.name AS updated_user, e.updated_at";
   $sql  .=" FROM equipments e";

@@ -29,6 +29,7 @@ $equipments = find_all_equipment();
             <tr>
               <th class="text-center">#</th>                
               <th class="text-center"> Tombo</th>
+              <th class="text-center"> IMEI</th>
               <th class="text-center"> Especificações </th>
               <th class="text-center"> Tipo de Equipamento </th>
               <th class="text-center none"> Fabricante </th>
@@ -47,6 +48,7 @@ $equipments = find_all_equipment();
               <tr>
                 <td class="text-center"><?= count_id();?></td>
                 <td class="text-center"><?= remove_junk($equipment['tombo']); ?></td>
+                <td class="text-center"><?= remove_junk($equipment['imei_number']); ?></td>
                 <td><?= remove_junk($equipment['specifications']); ?></td>
                 <td class="text-center"><?= remove_junk($equipment['type_equip']); ?></td>                
                 <td class="text-center"><?= remove_junk($equipment['manufacturer']); ?></td>                
